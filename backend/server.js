@@ -14,4 +14,9 @@ connection.connect((err) => {
         if (err) throw err;
         console.log("Table Dropped DB")
     });
+    var sql = "INSERT INTO Students(Student_ID,Student_FirstName,Student_LastName,Student_City,Student_Grade)VALUES(1,'Riya','Kumar','Bangalore','5')";
+    connection.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log("Data inserted");
+    });
 });
