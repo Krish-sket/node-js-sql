@@ -9,14 +9,9 @@ var connection = mysql.createConnection({
 connection.connect((err) => {
     if (err) throw err
     console.log("connected");
-    var sql = "DROP TABLE Student";
+    var sql = "UPDATE Students SET Student_City='Mumbai' WHERE Student_ID=102";
     connection.query(sql, function (err, result) {
         if (err) throw err;
-        console.log("Table Dropped DB")
-    });
-    var sql = "INSERT INTO Students(Student_ID,Student_FirstName,Student_LastName,Student_City,Student_Grade)VALUES(1,'Riya','Kumar','Bangalore','5')";
-    connection.query(sql, function (err, result) {
-        if (err) throw err;
-        console.log("Data inserted");
+        console.log("Data Updated");
     });
 });
