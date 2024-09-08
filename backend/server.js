@@ -6,12 +6,8 @@ var connection = mysql.createConnection({
     password: "nd0WKO3xeO",
     database: "Rz8hqn1dK4"
 });
-connection.connect((err) => {
-    if (err) throw err
-    console.log("connected");
-    var sql = "UPDATE Students SET Student_City='Mumbai' WHERE Student_ID=102";
-    connection.query(sql, function (err, result) {
-        if (err) throw err;
-        console.log("Data Updated");
-    });
+var sql = "CREATE TABLE Student(Student_ID INT, Student_FirstName VARCHAR(255), Student_LastName VARCHAR(255), Student_City VARCHAR(255)";
+connection.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Table Created in DB");
 });
